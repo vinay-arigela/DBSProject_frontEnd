@@ -1,0 +1,25 @@
+<div class="center">
+    <form ngNativeValidate>
+        <label>Transfer Type:</label>
+        <select required>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="Customer Transfer">Customer Transfer</option>
+        </select><br>
+        <label>Message Code:&nbsp;&nbsp;</label>
+        <select>
+            <option value="CHOB">CHOB</option>
+            <option value="CORT">CORT</option>
+            <option value="HOLD">HOLD</option>
+            <option value="INTC">INTC</option>
+            <option value="PHOB">PHOB</option>
+            <option value="PHOI">PHOI</option>
+            <option value="PHON">PHON</option>
+            <option value="REPA">REPA</option>
+            <option value="SDVA">SDVA</option>
+        </select><br>
+        
+        <label>AddTransferFee:</label>
+        <input type="text" placeholder="Enter Amount to Transfer" (keypress)="onPressNumbers($event)" required><br>
+        <button>Transfer</button>
+    </form>
+</div>
