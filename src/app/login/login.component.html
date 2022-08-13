@@ -1,9 +1,9 @@
 
   
 <div class="center" [ngStyle]="{'background-color':'white', 'width':'1200px', 'height':'200px', 'justify-content':'center'}">
-    
-        
+         
     <form  [formGroup]="loginForm" (submit)="welcome()" ngNativeValidate>
+      <input type="text" name="empName" (keypress)="keyPressChars($event)" formControlName="name" placeholder="Enter Your Name" required><br>
         <mat-form-field class="example-full-width" appearance="fill" ngNativeValidate>
             <mat-label>Choose a date</mat-label>
             <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [min]="todayDate"  required>
@@ -12,11 +12,7 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         <br>
-        <label>Emp Name:</label>
-        <input type="text" name="empName" (keypress)="keyPressChars($event)" formControlName="name" placeholder="Enter Your Name" required><br>
-        
-        <label>Emp AccNo:</label>
-        <input type="text" name="empAccno"  formControlName="acc_no" placeholder="Enter Your AccountNo" (keypress)="keyPressNumbers($event)" required><br><br>
+        <input type="text"  maxlength="14" name="empAccno"  formControlName="acc_no" placeholder="Enter Your AccountNo" (keypress)="keyPressNumbers($event)" required>
         <button type="submit" (click)="sendAccNo()">Submit</button>
     </form>
     </div>
